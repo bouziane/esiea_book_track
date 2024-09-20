@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:biblio_track/history.dart';
 
-class Book with History {
+class Bookx with History {
   //TODO: Ajouter ici les propriétés d'un livre
 
   // Méthode asynchrone pour emprunter un livre
