@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'history.dart';
+import 'user.dart';
 
 class Book with History {
   final String title;
@@ -9,10 +10,10 @@ class Book with History {
   Book({required this.title, this.author, this.isAvailable = true});
 
   // Méthode asynchrone pour emprunter un livre
-  Future<void> borrow() async {
+  Future<void> borrow(User user) async {
     if (isAvailable) {
       isAvailable = false;
-      log('Borrowed: $title');
+      log('Borrowed by ${user.name}: $title');
       await Future.delayed(Duration(seconds: 2)); // Simule un délai
       print('Vous avez emprunté le livre : $title');
     } else {
@@ -21,10 +22,10 @@ class Book with History {
   }
 
   // Méthode asynchrone pour retourner un livre
-  Future<void> returnBook() async {
+  Future<void> returnBook(User user) async {
     if (!isAvailable) {
       isAvailable = true;
-      log('Returned: $title');
+      log('Returned by ${user.name}: $title');
       await Future.delayed(Duration(seconds: 2)); // Simule un délai
       print('Vous avez retourné le livre : $title');
     } else {
