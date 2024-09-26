@@ -1,7 +1,18 @@
-import 'package:biblio_track/book.dart';
+import 'book.dart';
 
 class Library<T> {
-  void add(T resource) {}
+  List<T> resources = [];
 
-  void showAvailableBooks() {}
+  void add(T resource) {
+    resources.add(resource);
+  }
+
+  void showAvailableBooks() {
+    print('Livres disponibles :');
+    for (var resource in resources) {
+      if (resource is Book && resource.isAvailable) {
+        print('- ${resource.title} par ${resource.author ?? "Auteur inconnu"}');
+      }
+    }
+  }
 }
