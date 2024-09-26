@@ -9,8 +9,8 @@ Stream<String> borrowStream(Book book) async* {
 void main() async {
   Library lib = new Library<Book>();
 
-  var livre1 = new Book(title: "Flutter pour les nuls", author: null, isAvailable: false);
-  var livre2 = new Book(title: "Vie d'un pirate", author: "Barbe noire", isAvailable: false);
+  var livre1 = new Book(title: "Le Little Prince", author: "Antoine de Saint-Exupéry", isAvailable: true);
+  var livre2 = new Book(title: "Flutter pour les nuls", author: null, isAvailable: false);
 
   lib.add(livre1);
   lib.add(livre2);

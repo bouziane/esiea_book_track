@@ -17,7 +17,7 @@ class Book with History {
     if (isAvailable) {
       await Future.delayed(Duration(seconds: 2));
       isAvailable = false;
-      log("Livre emprunté");
+      log("Borrowed: ${title}");
     } else {
       print("Le livre ne peut pas être pris");
     }
@@ -28,7 +28,7 @@ class Book with History {
     if (!isAvailable) {
       await Future.delayed(Duration(seconds: 2));
       isAvailable = true;
-      log("Livre rendu");
+      log("Returned: ${title}");
     } else {
       print("Le livre n'est pas emprunté");
     }
