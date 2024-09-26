@@ -25,7 +25,7 @@ void main() async {
   book2.borrow();
   book2.returnBook();
   book2.showHistory();
-  
+
   print("----");
 
   var user = User('Yoshi');
@@ -36,7 +36,7 @@ void main() async {
   await user.borrowBook(book4);
 
   user.showBorrowedBooks();
-
   await user.returnBook(book1);
   user.showBorrowedBooks();
+  user.showUserHistory();
 }
