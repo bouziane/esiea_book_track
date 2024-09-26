@@ -13,27 +13,29 @@ class Book with History {
     }
 
     // Méthode asynchrone pour emprunter un livre
-    Future<void> borrow() async {
+    Future<bool> borrow() async {
         if (!isAvailable) {
             print("Book $title is already borrowed");
-            return;
+            return false;
         }
 
         await Future.delayed(Duration(seconds: 2));
         this.isAvailable = false;
         this.log("Borrowed: $title");
+        return true;
     }
 
     // Méthode asynchrone pour retourner un livre
-    Future<void> returnBook() async {
+    Future<bool> returnBook() async {
         if (isAvailable) {
             print("Book $title is already returned");
-            return;
+            return false;
         }
         
         await Future.delayed(Duration(seconds: 2));
         this.isAvailable = true;
         this.log("Returned: $title");
+        return true;
     }
 
 }
