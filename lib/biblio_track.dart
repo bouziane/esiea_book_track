@@ -5,7 +5,7 @@ import 'library.dart';
 // Fonction pour gérer un Stream d'emprunt de livres
 Stream<String> borrowStream(Book book) async* {
   await book.borrow();
-  print('Borrowed : ${book.title}');
+  book.log('Borrowed : ${book.title}');
 }
 
 void main() {
@@ -20,6 +20,6 @@ void main() {
     print(event);
   });
   book.returnBook();
-  print('Returned : ${book.title}');
+  book.log('Returned : ${book.title}');
   book.showHistory();
 }
