@@ -6,7 +6,6 @@ mixin History {
   }
 
   void showHistory() {
-    print("Historique :");
     for (String action in history) {
       print(action);
     } 

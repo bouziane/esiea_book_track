@@ -13,24 +13,28 @@ class Book with History {
   });
 
   // Méthode asynchrone pour emprunter un livre
-  Future<void> borrow() async {
+  Future<bool> borrow() async {
     if (isAvailable) {
       await Future.delayed(Duration(seconds: 2));
       isAvailable = false;
       log("Borrowed: ${title}");
+      return true;
     } else {
-      print("Le livre ne peut pas être pris");
+      print("Tu ne pas emprunter \"${title}\" car il est déjà emprunté");
+      return false;
     }
   }
 
   // Méthode asynchrone pour retourner un livre
-  Future<void> returnBook() async {
+  Future<bool> returnBook() async {
     if (!isAvailable) {
       await Future.delayed(Duration(seconds: 2));
       isAvailable = true;
       log("Returned: ${title}");
+      return true;
     } else {
-      print("Le livre n'est pas emprunté");
+      print("Tu ne peux pas rendre \"${title}\" parce que tu ne l'as pas emprunté");
+      return false;
     }
   }
 }
