@@ -31,11 +31,9 @@ Voici la structure de base du projet que vous allez compléter :
 ```
 biblio_track/
 ├── lib/
-│   ├── book.dart           # Classe Book à implémenter
-│   ├── library.dart        # Classe Library à implémenter
-│   └── biblio_track.dart   # Point d'entrée du programme
-└── test/
-    └── book_library_test.dart   # Tests à exécuter (déjà fournis)
+   ├── book.dart           # Classe Book à implémenter
+   ├── library.dart        # Classe Library à implémenter
+   └── biblio_track.dart   # Point d'entrée du programme
 ```
 
 ### 3. Implémentation des classes
@@ -56,7 +54,7 @@ Vous devez implémenter la classe `Book` avec les spécifications suivantes :
   - `void log(String action)` : enregistre une action dans l'historique du livre.
   - `void showHistory()` : affiche l'historique des actions sur le livre.
 
-#### **Mixin `History` (`lib/book.dart`)**
+#### **Mixin `History` (`lib/history.dart`)**
 
 Vous devez implémenter un mixin `History` qui sera appliqué à la classe `Book`. Ce mixin permet de gérer l'historique des actions (emprunt, retour).
 
@@ -74,6 +72,18 @@ Vous devez implémenter la classe `Library<T>` avec les spécifications suivante
 - **Méthodes** :
   - `void add(T resource)` : ajoute une ressource à la bibliothèque.
   - `void showAvailableBooks()` : affiche uniquement les livres disponibles dans la bibliothèque.
+ 
+  
+#### Gestion des logs :
+Lorsque des actions de prêt ou de retour sont effectuées, vous devez enregistrer un log dans le format suivant :
+- **Prêt d'un livre** : `'Borrowed: [Nom du Livre]'`
+- **Retour d'un livre** : `'Returned: [Nom du Livre]'`
+
+##### Exemples de logs :
+- `'Borrowed: The Little Prince'`
+- `'Returned: The Little Prince'`
+
+Ces logs doivent être affichés ou stockés au fur et à mesure des actions.
 
 ### 4. Pousser votre code
 
