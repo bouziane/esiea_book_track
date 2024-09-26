@@ -1,5 +1,11 @@
 mixin History {
-  void log(String action) {}
+  List<String> history = [];
+  
+  void log(String action) {
+    history.add(action);
+  }
 
-  void showHistory() {}
+  void showHistory() {
+    print('History: $history');
+  }
 }
