@@ -31,11 +31,9 @@ Voici la structure de base du projet que vous allez compléter :
 ```
 biblio_track/
 ├── lib/
-│   ├── book.dart           # Classe Book à implémenter
-│   ├── library.dart        # Classe Library à implémenter
-│   └── biblio_track.dart   # Point d'entrée du programme
-└── test/
-    └── book_library_test.dart   # Tests à exécuter (déjà fournis)
+   ├── book.dart           # Classe Book à implémenter
+   ├── library.dart        # Classe Library à implémenter
+   └── biblio_track.dart   # Point d'entrée du programme
 ```
 
 ### 3. Implémentation des classes
