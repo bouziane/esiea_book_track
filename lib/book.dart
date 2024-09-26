@@ -12,7 +12,7 @@ class Book with History {
   Future<void> borrow() async {
     if (isAvailable) {
       isAvailable = false;
-      log('Le livre "$title" a été emprunté.');
+      log('Borrowed: $title');
       await Future.delayed(Duration(seconds: 2)); // Simule un délai
       print('Vous avez emprunté le livre : $title');
     } else {
@@ -24,7 +24,7 @@ class Book with History {
   Future<void> returnBook() async {
     if (!isAvailable) {
       isAvailable = true;
-      log('Le livre "$title" a été retourné.');
+      log('Returned: $title');
       await Future.delayed(Duration(seconds: 2)); // Simule un délai
       print('Vous avez retourné le livre : $title');
     } else {
