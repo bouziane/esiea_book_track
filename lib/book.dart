@@ -13,7 +13,7 @@ class Book with History {
   Future<void> borrow() async {
     if (isAvailable) {
       isAvailable = false;
-      log('Borrowed');
+      log('Borrowed : $title');
     }
   }
 
@@ -21,7 +21,7 @@ class Book with History {
   Future<void> returnBook() async {
     if (!isAvailable) {
       isAvailable = true;
-      log('Returned');
+      log('Returned : $title');
     }
   }
 }
