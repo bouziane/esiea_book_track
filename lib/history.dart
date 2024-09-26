@@ -2,6 +2,8 @@ mixin History {
 
   String getFormattedTime() => DateTime.now().toIso8601String().substring(11, 19);
   final List<String> _history = [];
+  //getter for the _history field
+  List<String> get history => _history;
 
   void log(String action) {
     _history.add(action);

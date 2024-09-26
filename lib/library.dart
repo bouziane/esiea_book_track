@@ -2,6 +2,7 @@ import 'package:biblio_track/book.dart';
 
 class Library<T extends Book> {
   final List<T> _resources = [];
+  List<T> get resources => _resources;
 
   void add(T resource) {
     _resources.add(resource);
