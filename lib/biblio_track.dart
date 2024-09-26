@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'book.dart';
 import 'library.dart';
+import 'user.dart';
 
 String getFormattedTime() => DateTime.now().toIso8601String().substring(11, 19);
 
@@ -27,6 +28,9 @@ Future<void> run() async {
   library.add(book3);
   library.add(book4);
   library.add(book5);
+
+  var user1 = User('Alice');
+  var user2 = User('Bob');
 
   library.showAvailableBooks();
 
