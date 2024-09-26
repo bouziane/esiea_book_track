@@ -21,19 +21,19 @@ class Book with History {
 
         await Future.delayed(Duration(seconds: 2));
         this.isAvailable = false;
-        this.log("Borrowed : $title");
+        this.log("Borrowed: $title");
     }
 
     // Méthode asynchrone pour retourner un livre
     Future<void> returnBook() async {
         if (isAvailable) {
-            print("Returned $title");
+            print("Book $title is already returned");
             return;
         }
         
         await Future.delayed(Duration(seconds: 2));
         this.isAvailable = true;
-        this.log("Book $title returned");
+        this.log("Returned: $title");
     }
 
 }

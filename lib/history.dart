@@ -6,6 +6,6 @@ mixin History {
     }
 
     void showHistory() {
-        print(history);
+        print("Logs: $history");
     }
 }

@@ -17,9 +17,11 @@ void main() async {
 
     library.showAvailableBooks();
 
-    (library.resources[1] as Book).returnBook();
+    await (library.resources[1] as Book).returnBook();
 
     library.showAvailableBooks();
+
+    (library.resources[1] as Book).showHistory();
 }
 
 // Fonction pour gérer un Stream d'emprunt de livres
