@@ -8,9 +8,10 @@ class Library<T> {
   }
 
   void showAvailableBooks() {
+    print("Livres disponibles :");
     for (T resource in resources) {
       if (resource is Book && resource.isAvailable) {
-        print(resource);
+        print(resource.title);
       }
     }
   }

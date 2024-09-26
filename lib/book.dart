@@ -17,6 +17,7 @@ class Book with History {
     if (isAvailable) {
       await Future.delayed(Duration(seconds: 2));
       isAvailable = false;
+      log("Livre emprunté");
     } else {
       print("Le livre ne peut pas être pris");
     }
@@ -26,7 +27,8 @@ class Book with History {
   Future<void> returnBook() async {
     if (!isAvailable) {
       await Future.delayed(Duration(seconds: 2));
-      isAvailable = false;
+      isAvailable = true;
+      log("Livre rendu");
     } else {
       print("Le livre n'est pas emprunté");
     }
