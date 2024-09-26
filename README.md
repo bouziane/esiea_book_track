@@ -72,6 +72,18 @@ Vous devez implémenter la classe `Library<T>` avec les spécifications suivante
 - **Méthodes** :
   - `void add(T resource)` : ajoute une ressource à la bibliothèque.
   - `void showAvailableBooks()` : affiche uniquement les livres disponibles dans la bibliothèque.
+ 
+  
+#### Gestion des logs :
+Lorsque des actions de prêt ou de retour sont effectuées, vous devez enregistrer un log dans le format suivant :
+- **Prêt d'un livre** : `'Borrowed: [Nom du Livre]'`
+- **Retour d'un livre** : `'Returned: [Nom du Livre]'`
+
+##### Exemples de logs :
+- `'Borrowed: The Little Prince'`
+- `'Returned: The Little Prince'`
+
+Ces logs doivent être affichés ou stockés au fur et à mesure des actions.
 
 ### 4. Pousser votre code
 
