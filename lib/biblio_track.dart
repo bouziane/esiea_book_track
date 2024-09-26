@@ -4,6 +4,7 @@ import 'package:biblio_track/library.dart';
 
 import 'book.dart';
 
+
 Stream<String> borrowStream(Book book) async* {
   yield 'Demande d\'emprunt du livre "${book.title}" en cours...';
   if (!book.isAvailable) {
@@ -14,7 +15,6 @@ Stream<String> borrowStream(Book book) async* {
   await Future.delayed(Duration(seconds: 2));
   book.isAvailable = false;
   book.log('emprunté le livre');
-  book.log('ne rien faire');
   yield 'Le livre "${book.title}" a été emprunté avec succès.';
 }
 
