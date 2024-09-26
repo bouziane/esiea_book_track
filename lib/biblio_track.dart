@@ -14,7 +14,7 @@ Stream<String> borrowStream(Book book) async* {
 
   await Future.delayed(Duration(seconds: 2));
   book.isAvailable = false;
-  book.log('emprunté le livre');
+  book.log('emprunter le livre');
   yield 'Le livre "${book.title}" a été emprunté avec succès.';
 }
 

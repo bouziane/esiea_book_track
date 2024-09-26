@@ -23,7 +23,7 @@ class Book with History {
     }
     await Future.delayed(Duration(seconds: 2));
     isAvailable = false;
-    log('emprun effectué');
+    log('Borrowed: $title');
     print('le livre "$title" est emprunté');
   }
 
@@ -35,7 +35,7 @@ class Book with History {
     }
     await Future.delayed(Duration(seconds: 2));
     isAvailable = true;
-    log('livre retourner');
+    log('Returned: $title');
     print('le livre "$title" a été retourner');
   }
 }
