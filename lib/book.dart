@@ -1,17 +1,19 @@
 import 'dart:async';
-import 'package:biblio_track/history.dart';
+import 'history.dart';
 
 class Book with History {
   String title;
   String? author;
   bool isAvailable;
-  List<String>? history;
+  List<String> history;
 
+  Book(this.title, this.author, this.isAvailable, this.history);
+  
   // Méthode asynchrone pour emprunter un livre
   Future<void> borrow() async {
     if (isAvailable) {
       isAvailable = false;
-      history?.add('Borrowed');
+      history.add('Borrowed');
     }
   }
 
@@ -19,11 +21,12 @@ class Book with History {
   Future<void> returnBook() async {
     if (!isAvailable) {
       isAvailable = true;
-      history?.add('Returned');
+      history.add('Returned');
     }
   }
 
-  
 }
 
-extension UpperCaseTitle on Book {}
+extension UpperCaseTitle on Book {
+  String get upperCaseTitle => title.toUpperCase();
+}

@@ -1,7 +1,23 @@
-import 'package:biblio_track/book.dart';
+import 'book.dart';
 
 class Library<T> {
-  void add(T resource) {}
+  List<T> resources = [];
 
-  void showAvailableBooks() {}
+  void add(T resource) {
+    if (resource is Book) {
+      resources.add(resource);
+      print('Added ${resource.title}');
+    }
+  }
+
+  void showAvailableBooks() {
+    print('Available books :');
+    for (var resource in resources) {
+      if (resource is Book) {
+        if (resource.isAvailable) {
+          print(resource.title);
+        }
+      }
+    }
+  }
 }
