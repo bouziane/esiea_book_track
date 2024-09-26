@@ -54,7 +54,7 @@ Vous devez implémenter la classe `Book` avec les spécifications suivantes :
   - `void log(String action)` : enregistre une action dans l'historique du livre.
   - `void showHistory()` : affiche l'historique des actions sur le livre.
 
-#### **Mixin `History` (`lib/book.dart`)**
+#### **Mixin `History` (`lib/history.dart`)**
 
 Vous devez implémenter un mixin `History` qui sera appliqué à la classe `Book`. Ce mixin permet de gérer l'historique des actions (emprunt, retour).
 
