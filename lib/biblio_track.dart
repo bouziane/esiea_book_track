@@ -39,4 +39,6 @@ void main() async {
   book2.showHistory();
   book3.showHistory();
   book4.showHistory();
+
+  user.showHistory();
 }

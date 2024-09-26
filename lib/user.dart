@@ -1,6 +1,7 @@
 import 'book.dart';
+import 'history.dart';
 
-class User {
+class User with History {
   final String name;
   List<Book> borrowedBooks = [];
 
