@@ -1,0 +1,44 @@
+name: Dart Test
+
+on:
+  push:
+    branches:
+      - solution
+  pull_request:
+    branches:
+      - solution
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update apt-get and install apt-transport-https
+        run: sudo apt-get update && sudo apt-get install -y apt-transport-https
+
+      - name: Download and add the Google Linux GPG public key
+        run: |
+          wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub \
+          | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg
+
+      - name: Add Dart package repository
+        run: |
+          echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' \
+          | sudo tee /etc/apt/sources.list.d/dart_stable.list
+
+      - name: Install Dart
+        run: sudo apt-get update && sudo apt-get install -y dart
+
+      - name: Download private tests
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        run: git clone https://x-access-token:${TOKEN}@github.com/bouziane/esiea_book_track_tests.git test/
+      
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Run tests
+        run: dart test
+
