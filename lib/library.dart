@@ -6,7 +6,7 @@ class Library<T> {
   void add(T resource) {
     if (resource is Book) {
       resources.add(resource);
-      print('Added ${resource.title}');
+      print('Added ${resource.title} by ${resource.author}');
     }
   }
 
@@ -15,7 +15,7 @@ class Library<T> {
     for (var resource in resources) {
       if (resource is Book) {
         if (resource.isAvailable) {
-          print(resource.title);
+          print('- ${resource.title}');
         }
       }
     }

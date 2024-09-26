@@ -24,9 +24,8 @@ class Book with History {
       log('Returned');
     }
   }
-
 }
 
 extension UpperCaseTitle on Book {
-  String get upperCaseTitle => title.toUpperCase();
+
 }
